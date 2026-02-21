@@ -23,6 +23,7 @@ namespace NovelpiaDownloader
             var request = (HttpWebRequest)WebRequest.Create("https://novelpia.com/proc/login");
             request.Method = "POST";
             request.UserAgent = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36";
+            request.Referer = "https://novelpia.com/"; 
             request.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
             request.Headers.Add("cookie", $"LOGINKEY={loginkey};");
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
